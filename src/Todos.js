@@ -96,7 +96,7 @@ const styles = {
 export default function Todo() {
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchKeywords, setsearchKeywords] = useState("");
   const [editingId, setEditingId] = useState(null);
 
   const addTodo = () => {
@@ -141,12 +141,12 @@ export default function Todo() {
   };
 
   const filteredTodos = todos.filter((todo) =>
-    todo.text.toLowerCase().includes(searchTerm.toLowerCase())
+    todo.text.toLowerCase().includes(searchKeywords.toLowerCase())
   );
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.header}>Todo App</h1>
+      <h1 style={styles.header}>Todo App </h1>
       <div style={styles.inputGroup}>
         <input
           style={styles.input}
@@ -167,8 +167,8 @@ export default function Todo() {
       <div style={styles.inputGroup}>
         <input
           style={styles.input}
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          value={searchKeywords}
+          onChange={(e) => setsearchKeywords(e.target.value)}
           placeholder="Search todos"
         />
       </div>
